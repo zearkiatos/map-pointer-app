@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import Map from "./src/components/Map";
-import AppModal from "./src/components/Modal";
+import AppModal from "./src/components/AppModal";
 
 export default function App() {
   return (
