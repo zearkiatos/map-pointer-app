@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Modal } from "react-native";
 
 const AppModal = () => (
-  <Modal animationType="slide" transparent={true} visible={true}>
+  <Modal animationType="slide" transparent={true} visible={false}>
     <View style={styles.center}>
       <View style={styles.modalView}>
         <Text>😄</Text>
