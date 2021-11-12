@@ -1,26 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
-import { Dimensions } from 'react-native-web';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import Map from "./src/components/Map";
+import AppModal from "./src/components/Modal";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <Map />
+      <AppModal />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  map: {
-    height: Dimensions.get('window').height,
-    width: Dimensions.get('window').width
-  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
