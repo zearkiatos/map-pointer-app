@@ -1,12 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, Modal } from "react-native";
+import { StyleSheet, View, Modal } from "react-native";
 
-const AppModal = () => (
-  <Modal animationType="slide" transparent={true} visible={false}>
+const AppModal = ({ children, visibility }) => (
+  <Modal animationType="slide" transparent={true} visible={visibility}>
     <View style={styles.center}>
-      <View style={styles.modalView}>
-        <Text>😄</Text>
-      </View>
+      <View style={styles.modalView}>{children}</View>
     </View>
   </Modal>
 );
