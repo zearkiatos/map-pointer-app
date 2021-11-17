@@ -5,7 +5,7 @@ const Panel = () => {
   return (
     <View style={styles.panel}>
       <Button title="List" />
-      <Button title="Sow/Hide" />
+      <Button title="Show/Hide" />
     </View>
   );
 };

@@ -3,21 +3,27 @@ import { StyleSheet, View, Text } from "react-native";
 import Map from "./src/components/Map";
 import AppModal from "./src/components/AppModal";
 import Panel from "./src/components/Panel";
+import Input from './src/components/Input';
 
 export default function App() {
   const [points, setPoints] = useState([]);
+  const [point, setPoint] = useState({});
+  const [name, setName] = useState('');
+  const [visibility, setVisibility] = useState(false);
   const handleLongPress = ({ nativeEvent }) => {
-    const newPoints = points.concat({
-      coordinate: nativeEvent.coordinate,
-    });
-    setPoints(newPoints);
-    console.log(points);
+    setPoint(nativeEvent.coordinate);
+    setVisibility(true);
   };
+
+  const handleChangeText = text => {
+    setName(text);
+  };
+
   return (
     <View style={styles.container}>
       <Map onLongPress={handleLongPress} />
-      <AppModal visibility={true}>
-        <Text>Hello World! 😄</Text>
+      <AppModal visibility={visibility}>
+        <Input title="Name" placeholder="Name of the point" onChangeText={handleChangeText} />
       </AppModal>
       <Panel />
     </View>
