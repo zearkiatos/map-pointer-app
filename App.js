@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 import Map from "./src/components/Map";
 import AppModal from "./src/components/AppModal";
 import Panel from "./src/components/Panel";
@@ -19,17 +19,38 @@ export default function App() {
     setName(text);
   };
 
+  const handleSubmit = () => {
+    const newPoint = {
+      coordinate: point, name
+    };
+
+    setPoints(points.concat(newPoint));
+    setVisibility(false);
+    setName('');
+  }
+
+  const handleCancel = () => {
+    setPoint({});
+    setVisibility(false);
+    setName('');
+  }
+
+  console.log(points);
+
   return (
     <View style={styles.container}>
       <Map onLongPress={handleLongPress} />
       <AppModal visibility={visibility}>
         <Input title="Name" placeholder="Name of the point" onChangeText={handleChangeText} />
+        <View style={styles.buttonsContainer}>
+          <Button style={styles.button} title="Accept" onPress={handleSubmit} />
+          <Button style={styles.button} title="Cancel" onPress={handleCancel} />
+        </View>
       </AppModal>
       <Panel />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
