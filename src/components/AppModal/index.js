@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.3)"
   },
   modalView: {
     backgroundColor: "#fff",
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 3,
-    },
-    maxHeight: 100
+    }
   },
 });
 export default AppModal;

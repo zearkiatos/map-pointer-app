@@ -4,7 +4,8 @@ import Map from "./src/components/Map";
 import AppModal from "./src/components/AppModal";
 import Panel from "./src/components/Panel";
 import Input from './src/components/Input';
-import constants from './src/constants';
+import List from './src/components/List';
+import constants from "./src/constants";
 
 export default function App() {
   const [points, setPoints] = useState([]);
@@ -55,7 +56,7 @@ export default function App() {
               <Button title="Cancel" onPress={handleCancel} />
             </View>
           </Fragment>
-          : <Text> Someone occurred</Text>
+          : <List points={points} />
         }
 
       </AppModal>
