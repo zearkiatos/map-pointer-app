@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3,
     },
+    maxHeight: 100
   },
 });
 export default AppModal;
