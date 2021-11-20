@@ -46,7 +46,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Map onLongPress={handleLongPress} />
+      <Map onLongPress={handleLongPress} points={points} />
       <AppModal visibility={visibility}>
         {visibilityFilter === constants.ACTIONS.NEW_POINT ?
           <View style={styles.form}>
