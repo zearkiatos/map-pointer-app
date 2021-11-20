@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { FlatList, Text, View, Button, StyleSheet, Dimensions } from 'react-native';
 
-const List = ({ points }) => {
+const List = ({ points, closeModal }) => {
     return (
         <Fragment>
             <View style={styles.list}>
@@ -12,7 +12,7 @@ const List = ({ points }) => {
                 />
             </View>
             <View style={styles.button}>
-                <Button title="Close"></Button>
+                <Button title="Close" onPress={closeModal}></Button>
             </View>
         </Fragment>
     )

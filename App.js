@@ -33,7 +33,7 @@ export default function App() {
     setName('');
   }
 
-  const handleCancel = () => {
+  const handleClose = () => {
     setPoint({});
     setVisibility(false);
     setName('');
@@ -49,14 +49,14 @@ export default function App() {
       <Map onLongPress={handleLongPress} />
       <AppModal visibility={visibility}>
         {visibilityFilter === constants.ACTIONS.NEW_POINT ?
-          <Fragment>
+          <View style={styles.form}>
             <Input title="Name" placeholder="Name of the point" onChangeText={handleChangeText} />
             <View style={styles.buttonsContainer}>
               <Button title="Accept" onPress={handleSubmit} />
-              <Button title="Cancel" onPress={handleCancel} />
+              <Button title="Cancel" onPress={handleClose} />
             </View>
-          </Fragment>
-          : <List points={points} />
+          </View>
+          : <List points={points} closeModal={handleClose} />
         }
 
       </AppModal>
@@ -77,5 +77,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "baseline",
     minHeight: 60
+  },
+  form: {
+    padding: 15,
+    maxHeight: 120
   }
 });
