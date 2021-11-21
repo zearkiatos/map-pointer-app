@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: map-pointer-app
+    volumes: 
+      - ".:/app"
+    ports:
+      - "9006:19006"
+    tty: true
